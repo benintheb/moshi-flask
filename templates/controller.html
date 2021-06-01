@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+ 
+{% block content %}
+<div class="controllerWrapper">
+  <div class="switchDiv">
+      <div class="powerDiv">
+        <div class="lightSwitchDiv">
+          <img
+            class="lightIcon"
+            src="../static/img/lightOff.png"
+            alt="light"
+          ></img>
+        </div>
+        <div class="sensorSwitchDiv">
+          <img
+            class="sensorIcon"
+            src="../static/img/sensorOff.png"
+            alt="sensor"
+            onclick="javascript:location.href='/sensor'"
+          ></img>
+        </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

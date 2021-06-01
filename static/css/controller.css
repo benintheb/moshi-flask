@@ -1,0 +1,42 @@
+.controllerWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.switchDiv {
+}
+
+.powerDiv {
+  display: flex;
+}
+.lightSwitchDiv {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+.lightIcon {
+  width: 80px;
+  height: 80px;
+
+  margin-top: 20px;
+
+  cursor: pointer;
+}
+
+.sensorSwitchDiv {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+.sensorIcon {
+  width: 80px;
+  height: 80px;
+
+  margin-top: 25px;
+
+  cursor: pointer;
+}
