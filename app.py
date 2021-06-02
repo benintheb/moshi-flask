@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -7,13 +8,13 @@ app = Flask(__name__)
 def index():
   return render_template('controller.html')
 
-@app.route('/sensor')
-def sensor():
-  os.system("cd controller && python3 sensor.py")
+@app.route('/sensoron')
+def sensorOn():
+  subprocess.Popen(["python3", "./sensor.py"])
   return render_template('controller.html')
 
-@app.route('/sensor')
-def sensor():
+@app.route('/sensoroff')
+def sensorOff():
   os.system("cd controller && python3 sensor.py")
   return render_template('controller.html')
 

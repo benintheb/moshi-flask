@@ -11,6 +11,7 @@ GPIO.setup(sensor,GPIO.IN)
 
 os.system("./light.sh off")
 
+
 print("IR Sensor Ready.....")
 print(" ")
 
