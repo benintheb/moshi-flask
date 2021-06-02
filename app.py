@@ -10,7 +10,9 @@ def index():
 @app.route('/sensor')
 def sensor():
   os.system("cd controller && python3 sensor.py")
-  return "sensor activated"
+  return render_template('controller.html')
+
+
 
 host_addr = "0.0.0.0"
 port_num = "8080"
