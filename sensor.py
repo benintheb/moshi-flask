@@ -9,7 +9,7 @@ isLightOn = False
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(sensor,GPIO.IN)
 
-os.system("./controller/light.sh off")
+os.system("./light.sh off")
 
 
 print("IR Sensor Ready.....")
@@ -20,10 +20,10 @@ try:
       if GPIO.input(sensor):
           print("Object Detected")
           if isLightOn == False:
-              os.system("./controller/light.sh on")
+              os.system("./light.sh on")
               isLightOn = True
           elif isLightOn == True:
-              os.system("./controller/light.sh off")
+              os.system("./light.sh off")
               isLightOn = False
           while GPIO.input(sensor):
               time.sleep(0.2)
