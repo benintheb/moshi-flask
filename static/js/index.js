@@ -1,7 +1,19 @@
-const sensorBtn = document.getElementById("sensorIcon");
+const sensorBtnOff = document.getElementById("sensorIconOff");
 
-sensorBtn.onclick = (e) => {
+const sensorBtnOn = document.getElementById("sensorIconOn");
+
+sensorBtnOff.onclick = (e) => {
   e.preventDefault();
+  fetch("/sensoron");
 
-  console.log("sensor click");
+  sensorBtnOff.classList.add("hidden");
+  sensorBtnOn.classList.remove("hidden");
+};
+
+sensorBtnOn.onclick = (e) => {
+  e.preventDefault();
+  fetch("/sensoroff");
+
+  sensorBtnOn.classList.add("hidden");
+  sensorBtnOff.classList.remove("hidden");
 };
