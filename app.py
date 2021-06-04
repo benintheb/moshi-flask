@@ -15,7 +15,7 @@ def sensorOn():
 
 @app.route('/sensoroff')
 def sensorOff():
-  os.system("cd controller && python3 sensor.py")
+  subprocess.Popen.kill()
   return render_template('controller.html')
 
 host_addr = "0.0.0.0"
