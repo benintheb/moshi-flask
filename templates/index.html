@@ -5,15 +5,20 @@
     <title>lighthouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="webapp for lighthouse" />
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/controller.css">
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/switch.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/color.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/dim.css" />
   </head>
   <body>
     <div class="appWrapper">
       <div class="appContent">
         <div class="logoDiv">
-          <img class="logo" src="../static/img/lighthouse.png" alt="logo"></img>
+          <img class="logo" src="../static/img/lighthouse.png" alt="logo" />
         </div>
         <div class="titleDiv">
           <b>
@@ -21,7 +26,126 @@
           </b>
         </div>
         <div class="controlDiv">
-          {% block content %}{% endblock %}
+          <div class="switchDiv">
+            <div class="lightSwitchDiv">
+              <img
+                class="lightIcon"
+                id="lightIconOff"
+                src="../static/img/lightOff.png"
+                alt="light"
+              />
+              <img
+                class="lightIcon hidden"
+                id="lightIconOn"
+                src="../static/img/lightOn.png"
+                alt="light"
+              />
+            </div>
+            <div class="sensorSwitchDiv">
+              <img
+                class="sensorIcon"
+                id="sensorIconOff"
+                src="../static/img/sensorOff.png"
+                alt="sensor"
+              />
+              <img
+                class="sensorIcon hidden"
+                id="sensorIconOn"
+                src="../static/img/sensorOn.png"
+                alt="sensor"
+              />
+            </div>
+          </div>
+          <div class="colorDiv">
+            <input
+              class="radioInput"
+              type="radio"
+              id="colorSilver"
+              name="radioInput"
+            />
+            <label for="colorSilver"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+            <input
+              class="radioInput"
+              type="radio"
+              id="colorGreen"
+              name="radioInput"
+            />
+            <label for="colorGreen"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+            <input
+              class="radioInput"
+              type="radio"
+              id="colorBlue"
+              name="radioInput"
+            />
+            <label for="colorBlue"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+            <input
+              class="radioInput"
+              type="radio"
+              id="colorYellow"
+              name="radioInput"
+            />
+            <label for="colorYellow"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+            <input
+              class="radioInput"
+              type="radio"
+              id="colorRed"
+              name="radioInput"
+            />
+            <label for="colorRed"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+            <input
+              class="radioInput"
+              type="radio"
+              id="colorMagenta"
+              name="radioInput"
+            />
+            <label for="colorMagenta"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+          </div>
+          <div class="dimDiv">
+            <input
+              class="rangeInput"
+              type="range"
+              id="rangeInput"
+              min="5"
+              max="100"
+              step="5"
+            />
+          </div>
         </div>
       </div>
     </div>

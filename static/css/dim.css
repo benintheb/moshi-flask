@@ -1,0 +1,30 @@
+.dimDiv {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.rangeInput::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 30px;
+  border-radius: 15px;
+  background: linear-gradient(0.25turn, #8d874c, 30%, #e7e415);
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+
+  border: 1px solid rgb(113, 116, 73);
+  border-radius: 15px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+
+  height: 30px;
+  width: 30px;
+
+  background: #ffffff;
+  cursor: pointer;
+}

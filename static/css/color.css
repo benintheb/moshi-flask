@@ -1,0 +1,65 @@
+.colorDiv {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioSpan {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 10px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  text-align: center;
+  line-height: 62px;
+}
+.radioCheckedImg {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#colorSilver + label > span {
+  background-color: rgb(214, 214, 214);
+}
+
+#colorGreen + label > span {
+  background-color: #2ecc71;
+}
+
+#colorBlue + label > span {
+  background-color: #3498db;
+}
+
+#colorYellow + label > span {
+  background-color: #f1c40f;
+}
+
+#colorRed + label > span {
+  background-color: #e74c3c;
+}
+
+#colorMagenta + label > span {
+  background-color: rgb(219, 45, 219);
+}
+
+.radioInput:checked + label > span > img {
+  opacity: 1;
+}
+
+.rangeInput {
+  outline: none;
+  border: none;
+
+  width: 100%;
+  margin: 10px 0;
+
+  cursor: pointer;
+}

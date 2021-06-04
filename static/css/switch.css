@@ -1,14 +1,7 @@
-.controllerWrapper {
-  height: 100%;
-  width: 100%;
-}
-
 .switchDiv {
-}
-
-.powerDiv {
   display: flex;
 }
+
 .lightSwitchDiv {
   width: 50%;
   height: 100%;
