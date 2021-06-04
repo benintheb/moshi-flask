@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import os
 import subprocess
+import signal
 
 app = Flask(__name__)
 
@@ -10,12 +11,13 @@ def index():
 
 @app.route('/sensoron')
 def sensorOn():
-  subprocess.Popen(["python3", "./sensor.py"])
+  global sensor
+  sensor = subprocess.Popen(["python3", "./sensor.py"])
   return render_template('controller.html')
 
 @app.route('/sensoroff')
 def sensorOff():
-  subprocess.Popen.kill()
+  sensor.kill()
   return render_template('controller.html')
 
 host_addr = "0.0.0.0"
