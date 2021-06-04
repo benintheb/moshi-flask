@@ -9,9 +9,6 @@ isLightOn = False
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(sensor,GPIO.IN)
 
-os.system("./light.sh off")
-
-
 print("IR Sensor Ready.....")
 print(" ")
 
@@ -30,3 +27,4 @@ try:
 
 except KeyboardInterrupt:
     GPIO.cleanup()
+
