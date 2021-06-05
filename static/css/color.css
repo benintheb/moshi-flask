@@ -26,27 +26,27 @@
   transition: all 0.3s ease;
 }
 
-#colorSilver + label > span {
+#silver + label > span {
   background-color: rgb(214, 214, 214);
 }
 
-#colorGreen + label > span {
+#green + label > span {
   background-color: #2ecc71;
 }
 
-#colorBlue + label > span {
+#blue + label > span {
   background-color: #3498db;
 }
 
-#colorYellow + label > span {
+#yellow + label > span {
   background-color: #f1c40f;
 }
 
-#colorRed + label > span {
+#red + label > span {
   background-color: #e74c3c;
 }
 
-#colorMagenta + label > span {
+#magenta + label > span {
   background-color: rgb(219, 45, 219);
 }
 

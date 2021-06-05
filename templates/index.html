@@ -30,28 +30,17 @@
             <div class="lightSwitchDiv">
               <img
                 class="lightIcon"
-                id="lightIconOff"
+                id="lightIcon"
                 src="../static/img/lightOff.png"
                 alt="light"
-              />
-              <img
-                class="lightIcon hidden"
-                id="lightIconOn"
-                src="../static/img/lightOn.png"
-                alt="light"
+                onchange="handleChange()"
               />
             </div>
             <div class="sensorSwitchDiv">
               <img
                 class="sensorIcon"
-                id="sensorIconOff"
+                id="sensorIcon"
                 src="../static/img/sensorOff.png"
-                alt="sensor"
-              />
-              <img
-                class="sensorIcon hidden"
-                id="sensorIconOn"
-                src="../static/img/sensorOn.png"
                 alt="sensor"
               />
             </div>
@@ -60,10 +49,10 @@
             <input
               class="radioInput"
               type="radio"
-              id="colorSilver"
+              id="silver"
               name="radioInput"
             />
-            <label for="colorSilver"
+            <label for="silver"
               ><span class="radioSpan"
                 ><img
                   class="radioCheckedImg"
@@ -73,10 +62,10 @@
             <input
               class="radioInput"
               type="radio"
-              id="colorGreen"
+              id="green"
               name="radioInput"
             />
-            <label for="colorGreen"
+            <label for="green"
               ><span class="radioSpan"
                 ><img
                   class="radioCheckedImg"
@@ -86,10 +75,10 @@
             <input
               class="radioInput"
               type="radio"
-              id="colorBlue"
+              id="blue"
               name="radioInput"
             />
-            <label for="colorBlue"
+            <label for="blue"
               ><span class="radioSpan"
                 ><img
                   class="radioCheckedImg"
@@ -99,10 +88,18 @@
             <input
               class="radioInput"
               type="radio"
-              id="colorYellow"
+              id="yellow"
               name="radioInput"
             />
-            <label for="colorYellow"
+            <label for="yellow"
+              ><span class="radioSpan"
+                ><img
+                  class="radioCheckedImg"
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                  alt="Checked Icon" /></span
+            ></label>
+            <input class="radioInput" type="radio" id="red" name="radioInput" />
+            <label for="red"
               ><span class="radioSpan"
                 ><img
                   class="radioCheckedImg"
@@ -112,23 +109,10 @@
             <input
               class="radioInput"
               type="radio"
-              id="colorRed"
+              id="magenta"
               name="radioInput"
             />
-            <label for="colorRed"
-              ><span class="radioSpan"
-                ><img
-                  class="radioCheckedImg"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
-                  alt="Checked Icon" /></span
-            ></label>
-            <input
-              class="radioInput"
-              type="radio"
-              id="colorMagenta"
-              name="radioInput"
-            />
-            <label for="colorMagenta"
+            <label for="magenta"
               ><span class="radioSpan"
                 ><img
                   class="radioCheckedImg"
@@ -150,5 +134,24 @@
       </div>
     </div>
     <script src="../static/js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      if (`{{lightStatus}}` === "on") {
+        lightBtn.src = "/static/img/lightOn.png";
+      } else if (`{{lightStatus}}` === "off") {
+        lightBtn.src = "/static/img/lightOff.png";
+      }
+      if (`{{sensorStatus}}` === "on") {
+        sensorBtn.src = "/static/img/sensorOn.png";
+      } else if (`{{sensorStatus}}` === "off") {
+        sensorBtn.src = "/static/img/sensorOff.png";
+      }
+
+      for (let i = 0; i < colorInputs.length; i++) {
+        if (colorInputs[i].id === `{{colorStatus}}`) {
+          colorInputs[i].checked = "checked";
+        }
+      }
+      dimControl.value = `{{dimStatus}}`;
+    </script>
   </body>
 </html>

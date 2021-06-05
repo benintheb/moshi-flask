@@ -1,42 +1,38 @@
-const sensorBtnOff = document.getElementById("sensorIconOff");
-const sensorBtnOn = document.getElementById("sensorIconOn");
-const lightBtnOff = document.getElementById("lightIconOff");
-const lightBtnOn = document.getElementById("lightIconOn");
-
+const lightBtn = document.getElementById("lightIcon");
+const sensorBtn = document.getElementById("sensorIcon");
+const colorInputs = document.getElementsByClassName("radioInput");
 const dimControl = document.getElementById("rangeInput");
 
-sensorBtnOff.onclick = (e) => {
+lightBtn.onclick = (e) => {
   e.preventDefault();
-  fetch("/sensor/on");
 
-  sensorBtnOff.classList.add("hidden");
-  sensorBtnOn.classList.remove("hidden");
+  if (lightBtn.src.slice(-6, -4) === "On") {
+    lightBtn.src = "/static/img/lightOff.png";
+    fetch("/light/off");
+  } else if (lightBtn.src.slice(-6, -4) === "ff") {
+    lightBtn.src = "/static/img/lightOn.png";
+    fetch("/light/on");
+  }
 };
 
-sensorBtnOn.onclick = (e) => {
+sensorBtn.onclick = (e) => {
   e.preventDefault();
-  fetch("/sensor/off");
 
-  sensorBtnOn.classList.add("hidden");
-  sensorBtnOff.classList.remove("hidden");
+  if (sensorBtn.src.slice(-6, -4) === "On") {
+    sensorBtn.src = "/static/img/sensorOff.png";
+    fetch("/sensor/off");
+  } else if (sensorBtn.src.slice(-6, -4) === "ff") {
+    sensorBtn.src = "/static/img/sensorOn.png";
+    fetch("/sensor/on");
+  }
 };
 
-lightBtnOff.onclick = (e) => {
-  e.preventDefault();
-  fetch("/light/on");
-
-  lightBtnOff.classList.add("hidden");
-  lightBtnOn.classList.remove("hidden");
-};
-
-lightBtnOn.onclick = (e) => {
-  e.preventDefault();
-  fetch("/light/off");
-
-  lightBtnOn.classList.add("hidden");
-  lightBtnOff.classList.remove("hidden");
-};
+for (let i = 0; i < colorInputs.length; i++) {
+  colorInputs[i].onchange = (e) => {
+    fetch(`/color/${e.target.id}`);
+  };
+}
 
 dimControl.onchange = (e) => {
-  fetch("/dim/" + e.target.value);
+  fetch(`/dim/${e.target.value}`);
 };
