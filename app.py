@@ -56,7 +56,7 @@ def colorChange(color):
 
 @app.route('/dim/<value>')
 def dimControl(value):
-  session["dim"] = valu
+  session["dim"] = value
   os.system("./light.sh brightness " + value)
   return render_template('index.html')
 
